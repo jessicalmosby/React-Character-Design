@@ -10,7 +10,9 @@ export default function Editor({ setHead }) {
     <div className="editor">
       <div className="form-control">
         <label htmlFor="head">Head</label>
-        <select onChange={handleHead}></select>
+        <select onChange={handleHead}>
+          <option value="head"></option>
+        </select>
       </div>
     </div>
   );

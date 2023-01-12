@@ -11,7 +11,7 @@ export default function Main() {
 
   return (
     <main style={{ backgroundImage: `url(${background})` }}>
-      <Preview />
+      <Preview head={head} />
       <Editor setHead={setHead} />
     </main>
   );
