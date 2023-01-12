@@ -1,6 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Main.css';
+import Preview from '../Preview/Preview.js';
+import Editor from '../Editor/Editor.js';
+import background from '../../assets/background.png';
 
 export default function Main() {
-  return <div>Main</div>;
+  const [head, setHead] = useState('');
+  // const [middle, setMiddle] = useState('');
+  // const [bottom, setBottom] = useState('');
+
+  return (
+    <main style={{ backgroundImage: `url(${background})` }}>
+      <Preview />
+      <Editor setHead={setHead} />
+    </main>
+  );
 }
