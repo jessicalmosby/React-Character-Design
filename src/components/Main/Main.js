@@ -12,7 +12,7 @@ export default function Main() {
   return (
     <main style={{ backgroundImage: `url(${background})` }}>
       <Preview head={head} />
-      <Editor setHead={setHead} />
+      <Editor setHead={setHead} head={head} />
     </main>
   );
 }
