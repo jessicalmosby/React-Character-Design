@@ -7,12 +7,19 @@ import background from '../../assets/background.png';
 export default function Main() {
   const [head, setHead] = useState('');
   const [middle, setMiddle] = useState('');
-  // const [bottom, setBottom] = useState('');
+  const [bottom, setBottom] = useState('');
 
   return (
     <main style={{ backgroundImage: `url(${background})` }}>
-      <Preview head={head} middle={middle} />
-      <Editor setHead={setHead} head={head} setMiddle={setMiddle} middle={middle} />
+      <Preview head={head} middle={middle} bottom={bottom} />
+      <Editor
+        setHead={setHead}
+        head={head}
+        setMiddle={setMiddle}
+        middle={middle}
+        setBottom={setBottom}
+        bottom={bottom}
+      />
     </main>
   );
 }
