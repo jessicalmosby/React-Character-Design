@@ -1,0 +1,27 @@
+.preview {
+  width: 50%;
+  display: grid;
+  grid-template-rows: 1.5fr, 1fr, 2fr;
+  justify-content: center;
+}
+
+.img-head {
+  height: 194px;
+  width: 160px;
+  margin: 5px;
+  justify-content: center;
+}
+
+.img-middle {
+  height: 174px;
+  width: 170px;
+  margin: 5px;
+  justify-content: center;
+}
+
+.img-bottom {
+  height: 350px;
+  width: 230px;
+  margin-top: 5px;
+  justify-content: center;
+}

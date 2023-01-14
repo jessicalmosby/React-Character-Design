@@ -10,7 +10,7 @@ export default function Main() {
   const [bottom, setBottom] = useState('');
 
   return (
-    <main style={{ backgroundImage: `url(${background})` }}>
+    <main className="background" style={{ backgroundImage: `url(${background})` }}>
       <Preview head={head} middle={middle} bottom={bottom} />
       <Editor
         setHead={setHead}
