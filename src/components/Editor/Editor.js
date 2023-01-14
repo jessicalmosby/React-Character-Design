@@ -1,15 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Editor.css';
 
 export default function Editor({ head, setHead, middle, setMiddle, bottom, setBottom }) {
+  const [headCount, setHeadCount] = useState(0);
+  const [middleCount, setMiddleCount] = useState(0);
+  const [bottomCount, setBottomCount] = useState(0);
+
   const handleHead = (event) => {
     setHead(event.target.value);
+    setHeadCount((currentState) => {
+      return currentState + 1;
+    });
   };
   const handleMiddle = (event) => {
     setMiddle(event.target.value);
+    setMiddleCount((currentState) => {
+      return currentState + 1;
+    });
   };
   const handleBottom = (event) => {
     setBottom(event.target.value);
+    setBottomCount((currentState) => {
+      return currentState + 1;
+    });
   };
 
   return (
