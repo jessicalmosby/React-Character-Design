@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import './Editor.css';
+import Counter from '../Counter/Counter.js';
 
 export default function Editor({ head, setHead, middle, setMiddle, bottom, setBottom }) {
   const [headCount, setHeadCount] = useState(0);
   const [middleCount, setMiddleCount] = useState(0);
   const [bottomCount, setBottomCount] = useState(0);
+  const [inputValue, setInputValue] = useState('');
+  const [catchphrases, setCatchphrases] = useState([]);
 
   const handleHead = (event) => {
     setHead(event.target.value);
@@ -23,6 +26,10 @@ export default function Editor({ head, setHead, middle, setMiddle, bottom, setBo
     setBottomCount((currentState) => {
       return currentState + 1;
     });
+  };
+  const handleInput = () => {
+    setCatchphrases((currentState) => [...currentState, inputValue]);
+    setInputValue('');
   };
 
   return (
@@ -53,6 +60,24 @@ export default function Editor({ head, setHead, middle, setMiddle, bottom, setBo
           <option value="pinkpants">Pink</option>
           <option value="redpants">Red</option>
         </select>
+      </div>
+      <div className="catchphrases">
+        <label htmlFor="catchphrases">Catchphrase</label>
+        <input
+          name="catchphrase"
+          type="text"
+          value={inputValue}
+          onChange={(event) => setInputValue(event.target.value)}
+        />
+        <button onClick={handleInput}>Submit</button>
+        <ul>
+          {catchphrases.map((event) => {
+            return <li key={event}>{event}</li>;
+          })}
+        </ul>
+      </div>
+      <div className="counter">
+        <Counter headCount={headCount} middleCount={middleCount} bottomCount={bottomCount} />
       </div>
     </div>
   );
