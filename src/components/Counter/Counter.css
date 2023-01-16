@@ -1,9 +1,7 @@
 .counter {
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  border-bottom: 3px solid black;
+  display: grid;
+  grid-template-rows: 1fr, 1fr, 1fr;
+  /* border-bottom: 3px solid black;
   margin: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 20px; */
 }
